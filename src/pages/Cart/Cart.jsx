@@ -3,7 +3,7 @@ import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 const Cart = () => {
-  const { cartItems, food_list, removeFromeCart,getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromeCart,getTotalCartAmount,url } = useContext(StoreContext);
   const navigate = useNavigate();
   return (
     <div className="cart">
@@ -23,7 +23,7 @@ const Cart = () => {
             return (
               <div>
                 <div className="cart-items-title cart-items-item">
-                  <img src={item.image} alt="" />
+                  <img src={url+"/images/"+item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
@@ -40,17 +40,17 @@ const Cart = () => {
         <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
-            <div className="cart-total-details1">
+            <div className="cart-total-details">
               <p>Subtotal</p>
               <p>${getTotalCartAmount()}</p>
-              <hr/>
             </div>
-            <div className="cart-total-details2">
+            <hr/>
+            <div className="cart-total-details">
               <p>Delivery Fee</p>
               <p>${getTotalCartAmount()===0?0:2}</p>
-              <hr/>
             </div>
-            <div className="cart-total-details3">
+            <hr/>
+            <div className="cart-total-details">
               <b>Total</b>
               <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
             </div>

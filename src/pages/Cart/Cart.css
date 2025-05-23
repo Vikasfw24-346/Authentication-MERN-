@@ -35,17 +35,7 @@
     flex-direction: column;
     gap: 20px;    
 }
-.cart-total-details1{
-    display: flex;
-    justify-content: space-between;
-    color: #555;
-}
-.cart-total-details2{
-    display: flex;
-    justify-content: space-between;
-    color: #555;
-}
-.cart-total-details3{
+.cart-total-details{
     display: flex;
     justify-content: space-between;
     color: #555;
